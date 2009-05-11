@@ -1,0 +1,6 @@
+; $Id$
+name = Jquery Dropdown Jump
+description = "This module works with the jquery dropdown to enable a quick redirect dropdown menu"
+core = 6.x
+package = !Custom
+dependencies[] = jquery_dropdown

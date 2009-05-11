@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Implementation of hook_theme()
+ */
+function jquery_dropdown_theme(){
+	return array(
+		'jquery_dropdown_load_js' => array('arguments' => array()),
+	);
+}
+
+/**
+ * @todo is this where I need to put this? - JC
+ * 
+ * Implementation of hook_init()
+ */
+function jquery_dropdown_init(){
+	
+	//This loads the Javascript needed to power the fancy dropdown replacement
+	return theme('jquery_dropdown_load_js');
+}
+
+/**
+ * Load JS - right now the theme function does all the work
+ */
+function jquery_dropdown_load_js(){
+	return $data;
+}
+
+/**
+ * Theme Jquery dropdown load JS
+ * 
+ * Can override in phptemplate 
+ */
+function theme_jquery_dropdown_load_js(){
+	
+	drupal_add_js(drupal_get_path('module', 'jquery_dropdown').'/js/jquery_dropdown.js', 'module');
+	
+	//will want to override with your own CSS
+	drupal_add_css(drupal_get_path('module', 'jquery_dropdown').'/css/jquery_dropdown.css', 'module');
+}

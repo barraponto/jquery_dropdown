@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @todo is this where I need to put this? - JC
+ * 
+ * Implementation of hook_init()
+ */
+function jquery_dropdown_jump_init(){
+	
+	//This loads the Javascript needed to power the "jump" functionality
+	drupal_add_js(drupal_get_path('module', 'jquery_dropdown_jump').'/js/jquery_dropdown_jump.js', 'module');
+}
