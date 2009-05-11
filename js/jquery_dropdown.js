@@ -9,7 +9,6 @@
  *
  **/
 $(document).ready(function() {
-  
   //this does the actual css/html replacement of the select dropdown
   $("select.jquery_dropdown").each(function(){
     $(this).load_jquery_dropdown();//load jquery dropdowns
@@ -25,7 +24,12 @@ $.fn.load_jquery_dropdown = function(options) {
   if (!$(this).html()) return;
     
   $(this).hide();//hide this select
-  $(".jquery_dropdown").hide();//hide elements with jquery_dropdown class (in case you want to hide the submit button for instance)
+  
+  //hide elements with jquery_dropdown class (in case you want to hide the submit button for instance)
+  //for a better hide we have included .jquery_dropdown { display: none; } in the default css which keeps
+  //the select from "flashing" on and off, the noscript tag inserted in hook_footer() keeps it from hiding
+  //those elements when javascript is disabled to make it degrade gracefully
+  $(".jquery_dropdown").hide();
   
   var select_id = $(this).attr('id');  
   var select_name = $(this).attr('name');
@@ -77,6 +81,11 @@ $.fn.load_jquery_dropdown = function(options) {
     $(this).trigger("jquery_dropdown_list_refreshed");
     
     return false;
+  });
+
+  //hide when mouse out
+  $("ul.jquery_dropdown_list").hover(function(){}, function(){
+    $(this).hide();
   });
 
   //set initial header value

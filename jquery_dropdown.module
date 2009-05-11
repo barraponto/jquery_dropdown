@@ -20,6 +20,10 @@ function jquery_dropdown_init(){
 	return theme('jquery_dropdown_load_js');
 }
 
+function jquery_dropdown_footer(){
+	return "<noscript><style>.jquery_dropdown { display: block; }</style></noscript>";
+}
+
 /**
  * Load JS - right now the theme function does all the work
  */
