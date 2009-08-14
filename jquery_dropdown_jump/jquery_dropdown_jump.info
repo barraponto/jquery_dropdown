@@ -2,5 +2,11 @@
 name = Jquery Dropdown Jump
 description = "This module works with the jquery dropdown to enable a quick redirect dropdown menu"
 core = 6.x
-package = !Custom
+package = Other
 dependencies[] = jquery_dropdown
+; Information added by drupal.org packaging script on 2009-05-11
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "jquery_dropdown"
+datestamp = "1242044493"
+
