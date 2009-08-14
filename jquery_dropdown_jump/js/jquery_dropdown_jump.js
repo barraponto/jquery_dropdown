@@ -1,9 +1,9 @@
 /**
  * This uses some clever logic to find the parent form of the select and submit the button
  */
-$(document).ready(function(){
+Drupal.behaviors.loadJqueryDropdownJump = function(context) {
   
-  $("ul.jquery_dropdown_jump li a").click(function(){
+  $("ul.jquery_dropdown_jump li a", context).click(function(){
     if ($(this).attr('rel') == '') return;//don't jump if no value
     
     //find the parent form of this jump menu
@@ -12,4 +12,4 @@ $(document).ready(function(){
     //submit the form by clicking the submit button 
     parent_form.find("input.form-submit").click();
   });
-});
+}
