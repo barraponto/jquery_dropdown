@@ -8,12 +8,12 @@
  * 5. Add a listener so when an item gets selected and populate the hidden value and submit the form to achieve the same functionality
  *
  **/
-Drupal.behaviors.loadJqueryDropdown = function(context) {
+$(document).ready(function() {
   //this does the actual css/html replacement of the select dropdown
   $("select.jquery_dropdown").each(function(){
     $(this).load_jquery_dropdown();//load jquery dropdowns
   });
-}
+});
 
 /**
  * Load jquery dropdown for a select
