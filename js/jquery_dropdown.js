@@ -77,9 +77,10 @@ $.fn.load_jquery_dropdown = function(options) {
     $(this).parent("li").parent('ul').parent("div.jquery_dropdown_container").find("ul.jquery_dropdown_list").hide();
 
     $("#"+$(this).attr('class')).val($(this).attr('rel'));//set value to select
-    
-    $(this).trigger("jquery_dropdown_list_refreshed");
-
+   
+    $(this).trigger("jquery_dropdown_list_refreshed");//trigger the onchange event of our drop down when we click a fake option
+    $('#'+select_id).trigger("onchange");
+   
     return false;
   });
 
