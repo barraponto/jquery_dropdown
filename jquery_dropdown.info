@@ -1,4 +1,3 @@
-; $Id$
 name = Jquery Dropdown
 description = "This is a CSS/HTML jquery select replacement. It is meant to provide a quick and easy way to style dropdowns."
 core = 6.x
